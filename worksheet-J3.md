@@ -159,6 +159,7 @@
       }
   }
   ```
+  It won't compile because the get_name method is private.
 
 ### 7. If we change the implementation of A to the following, what does the code below output?
   ``` java
@@ -193,6 +194,7 @@
       }
   }
   ```
+This will return A: 1, this expected output becuse all methods are now visible.
 
 ### 8. What is the output of this program? You should do this without running the program.
   ```java
@@ -226,6 +228,8 @@
       }
   }
   ```
+
+  Returns foo1: B B
 
 ### 9. Suppose you had the following class structures
   ``` java
@@ -278,10 +282,9 @@
           String ret = "Name: " + name + "\n";
           ret += "Species: " + species;
           retunr ret;
-      }       
+      }
   }
   ```
-  What is the output of the following snippet of code? If there is an ERROR, describe the error. You should not need to run the code to determine the output.
   ```java
    Species dog = new Species("Canis","Familaris");
    Breed shorthair = new Breed("shorthair", new Species("Felis","Catus"));
@@ -293,6 +296,16 @@
    System.out.println(george);
   System.out.println(brutus);
   ```
+  It will return
+  Name: Fluffy
+  Species: Canis Familiaris (pomeranian)
+  Name: george
+  Species: dog
+  Name: brutus
+  Species: shorthair
+  
+  What is the output of the following snippet of code? If there is an ERROR, describe the error. You should not need to run the code to determine the output.
+
 ### 10. Consider the following classes
   ``` java
   public class A {
@@ -352,7 +365,22 @@
   System.out.println(d.bar()); //<-- Mark D.2
   System.out.println(d.baz()); //<-- Mark D.3
   ```
+  The lines will return the following:
+  Can't be determined
+  Can't be determined
+  Error
 
+  41
+  50
+  y
+
+  42
+  7
+  Error 
 ### 11. What is the difference between a class and an abstract class? From a software engineering perspective, why would you ever want to use an abstract class instead of a regular class?
 
+Because if you have a "base" case that has a bunch of characteristics that cannot actually work as a class, Then you don't want to accidentally create an object using that class.
+
 ### 12. If you were to create an abstract class for a Car – what features could be defined in the implemented class vs. what could be defined in the abstract class? Provide justifications for your design.
+Some features for the implemented class could be color, shape/type, brand, #of seats, things that vary between cars. These may should be in the implement class because they are not shared among all cars. In the abstract class, 
+features like has 4 wheels, had a steering wheel, has windows, things that all cars have. This should be in the abstract class because they are shared between all cars. However if you tried to make a car based on that description, it would be lacking in essential details.
