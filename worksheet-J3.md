@@ -101,7 +101,7 @@
       }
   }
   ```
-  Returns "~~B~~ ~~B~~". 
+  Returns "~B~ ~B~". 
 
 ### 5.What is the output of this program? You should be able to do this without running the program!
 
